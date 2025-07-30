@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/custom.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <div class="overflow-hidden whitespace-nowrap bg-[#815a4c] text-white py-2">
+        <div class="inline-block animate-marquee">
+            <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
+            <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
+        </div>
+    </div>
+    <div class="absolute bottom-0 right-0 flex justify-center items-center">
+        <a href="/index.html" class="py-2 px-4 bg-[#815a4c] text-white rounded-2xl">Main</a>
+    </div>
+    <header class="py-3 bg-white">
+        <nav class="flex justify-center items-center gap-3 px-6">
+            <img src="/images/ppslogo.png" alt="" class="h-14">
+            <div>
+                <h1 class="roboto-condensed">Pragati Public School</h1>
+                <p class="text-xs">Muwani (Pithoragarh)</p>
+            </div>
+
+
+
+        </nav>
+    </header>
+    <div class="h-[1px] bg-[#815a4c] w-full"></div>
+    <main class="mt-5">
+        <h1 class="font-semibold w-full text-center">Admin Panel</h1>
+        <section class="w-full px-4 mt-4">
+            <h1>News And Events</h1>
+            <table class="w-full table-auto border-collapse rounded-lg overflow-hidden shadow-lg">
+                <thead>
+                    <tr class="bg-red-600 text-white">
+                        <th class="w-[20%] px-4 py-2 text-left">S.No</th>
+                        <th class="w-[80%] px-4 py-2 text-left bg-blue-600">News and Event</th>
+                    </tr>
+                </thead>
+                <tbody id="nae" class="bg-amber-100 text-black">
+                    
+                </tbody>
+            </table>
+
+            <form id="newsaddform" action="" class="mt-4">
+                
+                <input id="addnews" type="text" class="rounded-2xl outline-none focus:outline-0 focus:border-none" placeholder="Add News">
+                <button type="submit" class="bg-amber-200 px-4 py-2 rounded-2xl">ADD</button>
+            </form>
+            <form id="newsdeleteform" action="" class="mt-4">
+                
+                <input id="deletenews" type="text" class="rounded-2xl outline-none focus:outline-0 focus:border-none" placeholder="Delete News">
+                <button type="submit" class="bg-amber-200 px-4 py-2 rounded-2xl">Delete</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>
