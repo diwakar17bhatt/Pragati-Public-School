@@ -1,8 +1,7 @@
 
 
-
-
-function animateValue(id, start, end, duration) {
+if(document.body.id === "index-page"){
+  function animateValue(id, start, end, duration) {
       const obj = document.getElementById(id);
       let startTimestamp = null;
       const step = (timestamp) => {
@@ -39,8 +38,12 @@ function animateValue(id, start, end, duration) {
     observer.observe(counterEs)
 
 
+
+}
+
+
 document.getElementById("doubleDropdownButton-two").addEventListener("click", ()=>{
-  console.log("hello")
+  
   document.getElementById("doubleDropdown-two").classList.toggle("hidden")
     document.getElementById("doubleDropdown").classList.add("hidden")
 })
@@ -50,6 +53,8 @@ document.getElementById("doubleDropdownButton").addEventListener("click", ()=>{
   document.getElementById("doubleDropdown-two").classList.add("hidden")
  
 })
+
+
 
 async function getNews() {
   const res = await fetch("http://localhost:3000/getnews")
@@ -63,8 +68,8 @@ async function getNews() {
   }else{
     data.forEach(val=>{
       const event = document.createElement("h1")
-      event.classList.add("flex", "items-center", "gap-2")
-      event.innerHTML=`<i class="fa-solid fa-arrow-right"></i>${val.newsandevents}`;
+      event.classList.add("flex", "items-center", "gap-5", "underline")
+      event.innerHTML=`${val.newsandevents}`;
       news.appendChild(event)
 
     })
@@ -73,3 +78,23 @@ async function getNews() {
 
 getNews()
 
+
+const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    speed: 700,
+    effect: "fade",  // or "fade"
+    slidesPerView: 1,
+    spaceBetween: 0,
+    // autoplay: {
+    //   delay: 2000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });

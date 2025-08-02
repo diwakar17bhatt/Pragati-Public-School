@@ -13,6 +13,20 @@
   min-width: 100%;
   animation: marquee 20s linear infinite;
 }
+
+@media (min-width: 768px) {
+  @keyframes marque {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marque {
+    display: inline-block;
+    min-width: 100%;
+    animation: marque 20s linear infinite;
+  }
+}
+
 .cookie-regular {
   font-family: "Cookie", cursive;
   font-weight: 400;
