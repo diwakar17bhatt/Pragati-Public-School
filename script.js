@@ -85,10 +85,26 @@ const swiper = new Swiper(".mySwiper", {
     effect: "fade",  // or "fade"
     slidesPerView: 1,
     spaceBetween: 0,
-    // autoplay: {
-    //   delay: 2000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  const msp = new Swiper(".msP", {
+    loop: true,
+    speed: 700,
+    effect: "slide",  // or "fade"
+    slidesPerView: 1,
+    spaceBetween: 0,
+    
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
