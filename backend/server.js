@@ -1,13 +1,17 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
+const multer = require('multer');
 const bodyParser = require("body-parser");
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -67,7 +71,49 @@ app.post("/deletenews", (req, res) => {
 
 
 
+const storage = multer.diskStorage({
+  destination: 'uploads/',
+  filename: (req, file, cb) => {
+    const uniqueName = Date.now() + '-' + file.originalname;
+    cb(null, uniqueName);
+  }
+});
+const upload = multer({ storage });
 
+
+
+app.post('/add-teacher', upload.single('profileImage'), (req, res) => {
+  const { name, qualification, contact } = req.body;
+  const imagePath = req.file ? `/uploads/${req.file.filename}` : '';
+  const sql = "INSERT INTO teachers (name, qualification, contact, profile_image_url) VALUES (?, ?, ?, ?)";
+  db.query(sql, [name, qualification, contact, imagePath], (err, result) => {
+    if (err) return res.status(500).send(err);
+    res.send({ message: "Teacher added successfully" });
+  });
+});
+
+app.post('/delete-teacher', (req, res) => {
+  const { contact } = req.body;
+  const sql = "DELETE FROM teachers WHERE contact = ?";
+  db.query(sql, [contact], (err, result) => {
+    if (err) return res.status(500).send(err);
+    res.send({ message: "Teacher deleted successfully" });
+  });
+});
+
+app.get('/teachers', (req, res) => {
+  db.query("SELECT * FROM teachers", (err, result) => {
+    if (err) return res.status(500).send(err);
+    res.send(result);
+  });
+});
+
+app.get('/u-teachers', (req, res) => {
+  db.query("SELECT * FROM teachers", (err, result) => {
+    if (err) return res.status(500).send(err);
+    res.send(result);
+  });
+});
 
 
 

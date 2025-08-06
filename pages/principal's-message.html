@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/src/custom.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,35 +20,100 @@
 
     <title>Principal's Message</title>
 </head>
-<body >
-    <div class="overflow-hidden whitespace-nowrap bg-[#815a4b] text-white py-2">
-        <div class="inline-block animate-marquee">
+
+<body class="overflow-x-hidden">
+    <div class="overflow-hidden whitespace-nowrap bg-[#815a4c] text-white py-2">
+        <div class="inline-block md:inline-block animate-marque animate-marquee">
             <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
             <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
         </div>
     </div>
-
-    <header class="bg-white">
-        <nav class="flex justify-between items-center gap-3 px-6 py-2">
-            <img src="/images/ppslogo.png" alt="" class="h-14">
-            <div>
+    <header class="py-3 bg-white">
+        <nav class="flex justify-between items-center gap-3 px-4">
+            <img src="/images/ppslogo.png" alt="" class="h-14 md:hidden">
+            <div class="md:hidden">
                 <h1 class="roboto-condensed">Pragati Public School</h1>
                 <p class="text-xs">Muwani (Pithoragarh)</p>
+                <p class="text-xs">Affilation No: 12345</p>
             </div>
-
-
-            <!-- drawer init and toggle -->
-            <div class="text-center">
+            <div class="hidden md:flex items-center justify-center gap-4 ml-10">
+                <img src="/images/ppslogo.png" alt="" class="h-20">
+                <div>
+                    <h1 class="roboto-condensed text-2xl">Pragati Public School</h1>
+                    <p class="text-xs">Muwani (Pithoragarh)</p>
+                    <p class="text-xs">Affilation No: 12345</p>
+                </div>
+            </div>
+            <ul class="hidden md:flex gap-5 items-center mr-10">
+                <li><a href="/index.html"
+                        class="border-b py-2 px-4 hover:bg-amber-500 rounded-lg cursor-pointer">Home</a></li>
+                <li class="relative group w-fit pb-2 border-b py-2 px-4 hover:bg-amber-500 rounded-lg cursor-pointer">
+                    <span class="cursor-pointer">About Us</span>
+                    <div id="mddoubleDropdown"
+                        class="absolute left-0 mt-2 hidden group-hover:block bg-white text-[#815a4b] z-60 shadow-lg rounded-xl min-w-[180px]">
+                        <ul class="py-2 text-sm">
+                            <li>
+                                <a href="/pages/aboutpps.html" class="block px-4 py-2 hover:bg-gray-100">About PPS</a>
+                            </li>
+                            <li>
+                                <a href="/pages/manager's-message.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Manager's Message</a>
+                            </li>
+                            <li>
+                                <a href="/pages/principal's-message.html"
+                                    class="block px-4 py-2 hover:bg-gray-100">Principal's Message</a>
+                            </li>
+                            <li>
+                                <a href="/pages/missionandvision.html" class="block px-4 py-2 hover:bg-gray-100">Our
+                                    Mission and Vision</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/pages/ourcampus.html" class="border-b w-fit py-2 px-4 hover:bg-amber-500 rounded-lg">Our
+                        Campus</a></li>
+                <li class="relative group w-fit pb-2 border-b py-2 px-4 hover:bg-amber-500 rounded-lg cursor-pointer">
+                    <span class="cursor-pointer">Academics</span>
+                    <div id="mddoubleDropdown"
+                        class="absolute left-0 mt-2 hidden group-hover:block bg-white text-[#815a4b] z-60 shadow-lg rounded-xl min-w-[180px]">
+                        <ul class="py-2 text-sm">
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Academics
+                                    Schedule</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Curriculum</a>
+                            </li>
+                            <li>
+                                <a href="/academics/fee-structure-2025-26.pdf" target="_blank"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fee
+                                    Structure</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Examination
+                                    Periods</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="/pages/gallery.html"
+                        class="border-b w-fit py-2 px-4 hover:bg-amber-500 rounded-lg">Gallery</a></li>
+                <li><a href="/pages/admin.html"
+                        class="bg-amber-500 text-center flex justify-center items-center py-2 px-4 rounded-lg">Admin
+                        Login</a></li>
+            </ul>
+            <div class="text-center md:hidden">
                 <button class="text-white bg-[#815a4c] font-medium rounded-lg text-sm px-4 py-2" type="button"
                     data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example"
                     data-drawer-placement="right" aria-controls="drawer-right-example">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
-
-            <!-- drawer component -->
             <div id="drawer-right-example"
-                class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform duration-500  bg-white w-70 translate-x-full"
+                class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform duration-500 bg-white w-70 translate-x-full"
                 tabindex="-1" aria-labelledby="drawer-right-label">
                 <h5 id="drawer-right-label" class="inline-flex items-center mb-4 text-xl font-semibold text-[#815a4c]">
                     Menu</h5>
@@ -60,11 +128,10 @@
                 </button>
                 <div class="mt-4">
                     <ul class="flex flex-col gap-3 text-[#815a4c]">
-                        <li class="border-b w-fit pb-2"><a href="index.html">Home</a></li>
+                        <li class="border-b w-fit pb-2"><a href="/index.html">Home</a></li>
                         <li class="border-b w-fit">
-                            <div id="multi-dropdown" class="z-10   rounded-lg">
+                            <div id="multi-dropdown" class="z-10 rounded-lg">
                                 <ul class="pb-2 " aria-labelledby="multiLevelDropdownButton">
-
                                     <li>
                                         <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
                                             data-dropdown-placement="right-start" type="button"
@@ -74,7 +141,7 @@
                                                 <path stroke="currentColor" stroke-linecap="round"
                                                     stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                                             </svg></button>
-                                        <div id="doubleDropdown" class="z-10 shadow-sm rounded-xl  hidden">
+                                        <div id="doubleDropdown" class="z-10 shadow-sm rounded-xl hidden">
                                             <ul class="py-2 text-sm" aria-labelledby="doubleDropdownButton">
                                                 <li>
                                                     <a target="_blank" href="/pages/aboutpps.html"
@@ -92,18 +159,15 @@
                                                         Message</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"
-                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Objectives</a>
+                                                    <a href="/pages/missionandvision.html"
+                                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Our
+                                                        Mission and Vision</a>
                                                 </li>
                                             </ul>
                                         </div>
                                     </li>
-
                                 </ul>
                             </div>
-
-
-
                         </li>
                         <li class="border-b w-fit pb-2"><a href="/pages/ourcampus.html">Our Campus</a></li>
                         <li class="border-b w-fit ">
@@ -127,7 +191,7 @@
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Curriculum</a>
                                     </li>
                                     <li>
-                                        <a href="#"
+                                        <a href="/academics/fee-structure-2025-26.pdf"
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Fee
                                             Structure</a>
                                     </li>
@@ -136,147 +200,123 @@
                                             class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Examination
                                             Periods</a>
                                     </li>
-
                                 </ul>
                             </div>
-
-
                         <li class="w-fit "><a href="/pages/gallery.html">Gallery</a></li>
-
-
                         </li>
                     </ul>
                 </div>
-                <div class="mt-10">
-                    <a href="/pages/admin.html" class="bg-[#8B4513] text-white px-3 py-2 rounded-2xl">Admin Login</a>
-                </div>
             </div>
-
-            </div>
-
         </nav>
-        <div class="w-screen h-[1px] bg-[#8B4513]"></div>
     </header>
+    <div class="w-full h-[1px] bg-[#815a4c]"></div>
     <main>
-        <section class="py-5 pb-10">
-            <section class="mx-5 px-6 py-5 pt-5 flex flex-col gap-3 rounded-md">
-                <div class="h-40 w-full bg-gray-400 rounded-3xl mt-3">
-
+        <section class="py-5 pb-10 w-full md:py-0">
+            <section
+                class="mx-5 py-5 pt-5 flex flex-col gap-3  rounded-md md:flex md:flex-row md:justify-center md:gap-40 md:py-10 md:mx-0 md:rounded-none">
+                <div
+                    class="h-auto md:w-96 bg-[#FAF3E0] rounded-3xl mt-3 mx-3 shadow-md flex flex-col items-center justify-center p-4">
+                    <img src="" alt="Principal Photo"
+                        class="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md mb-3">
+                    <p class="cookie-regular text-2xl  bg-white px-6 py-1 w-fit rounded">Smt. Suman Bhatt
+                    </p>
+                    <p class="text-[#2F4F4F] font-medium text-center">Principal, Pragati Public School</p>
                 </div>
-                <p class="font-semibold ">From the Principal's Desk</p>
-                <p style="word-spacing: 10px;" class="text-justify  cormorant-garamond ">Lorem ipsum dolor
-                    sit amet consectetur, adipisicing elit. Molestiae
-                    beatae explicabo animi doloremque, consectetur ullam quis, nemo tempora <br>laboriosam placeat quos
-                    sapiente
-                    facere modi architecto, aperiam quaerat voluptatibus quibusdam illum? Lorem ipsum dolor
-                    sit amet consectetur, adipisicing elit. Molestiae
-                    beatae explicabo animi doloremque, consectetur ullam quis, nemo tempora laboriosam placeat quos
-                    sapiente <br>
-                    facere modi architecto, aperiam quaerat voluptatibus quibusdam illum?Lorem ipsum dolor
-                    sit amet consectetur, adipisicing elit. Molestiae
-                    beatae explicabo animi doloremque, consectetur ullam quis, nemo tempora laboriosam placeat quos
-                    sapiente
-                    facere modi architecto, aperiam quaerat voluptatibus quibusdam illum?</p>
-                
-                <div class="my-2 flex flex-col gap-2">
-
-
-                    <p class="cookie-regular text-3xl bg-[#815a4c]  px-12 w-fit text-white">Suman Bhatt</p>
-                    <p class="">Principal, Pragati Public School </p>
+                <div class="md:w-[600px] md:flex md:gap-5 md:flex-col px-3">
+                    <p class="font-bold  md:text-2xl text-amber-500">From the Principal's Desk</p>
+                    <p style="word-spacing: 8px;" class=" leading-relaxed tracking-wide cormorant-garamond">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae beatae explicabo animi
+                        doloremque,
+                        consectetur ullam quis, nemo tempora laboriosam placeat quos sapiente facere modi architecto,
+                        aperiam
+                        quaerat voluptatibus quibusdam illum.
+                        <br><br>
+                        Voluptates odit nesciunt assumenda voluptatem laborum tempore, veniam eius rem sequi. Alias
+                        unde, ea
+                        quidem placeat deserunt error aut voluptate minima saepe harum accusamus, voluptas quas
+                        perferendis.
+                        <br><br>
+                        Fugiat vitae cum pariatur, asperiores dolorum nostrum recusandae optio voluptates iste nemo ea?
+                        Repellendus iusto veniam harum ad, doloribus temporibus dolore quaerat, architecto nisi hic!
+                        <br><br>
+                        Ipsum et aut hic illum, nesciunt cupiditate beatae nam accusantium, unde laborum, quo sapiente
+                        dolor! Quod
+                        doloribus molestiae eius inventore voluptatibus enim amet quam sunt pariatur fugiat vitae, ullam
+                        minima?
+                    </p>
                 </div>
             </section>
         </section>
     </main>
-    <footer class="bg-[#815a4c] dark:bg-gray-900 pt-10">
-
-        <section class="flex flex-col justify-center items-center gap-3 pb-10 px-3">
-            <div class="flex justify-center items-center flex-col bg-white text-black px-3 py-3">
-                <div>
-                    <img src="/images/ppslogo.png" alt="" class="h-40 w-40">
-                </div>
-                <div class=" font-bold flex flex-col justify-center items-center text-3xl">
-                    <h1>PRAGATI PUBLIC</h1>
-                    <h1>SCHOOL</h1>
-                </div>
-                <div class="h-full w-full px-8">
-                    <p class=" text-justify">Empowering students with knowledge, discipline, and values to become
-                        confident individuals, responsible citizens, and leaders of tomorrow.</p>
-                </div>
-            </div>
-            <div class="text-gray-200 flex flex-col gap-5 pt-5">
-                <h1 class="w-full text-center text-2xl font-semibold">Contact Us</h1>
-                <div class="flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <p>Muwani, Pithoragarh, Uttarakhand</p>
-                </div>
-                <div class="flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+91 9568903971, +91 7505163996</p>
-                </div>
-                <div class="flex justify-center items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>pragatischool123@gmail.com</p>
-                </div>
-            </div>
-        </section>
-        <section>
-
-            <div class="w-full h-[400px] overflow-hidden shadow-lg  flex flex-col items-center justify-center">
-                <h1 class="pt-3 text-2xl font-semibold text-white">Locate Us</h1>
-                <iframe class="w-full h-full border-0 p-3"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1125.7027650032085!2d80.12751747223928!3d29.756218729175426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a12aee404a5dd5%3A0xf98b3b62a95899f6!2sPragati%20Public%20School%20Muwani!5e1!3m2!1sen!2sin!4v1753547395739!5m2!1sen!2sin"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-
-        </section>
-        <div class="mx-auto w-full max-w-screen-xl">
-             <h2 class="mb-3 mt-6 text-sm font-semibold uppercase text-white px-4 pt-6">Useful Links</h2>
-            <div class="grid grid-cols-2 gap-8 px-4  lg:py-8 md:grid-cols-4">
-                <div>
-                   
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="index.html" class=" hover:underline text-white">Home</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="/pages/aboutpps.html" class="hover:underline text-white">About PPS</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="/pages/principal's-message.html" class="hover:underline text-white">Principal's Message</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="/pages/gallery.html" class="hover:underline text-white">Photo Gallery</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="/pages/ourcampus.html" class="hover:underline text-white">Our Campus</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="/pages/visionandmission.html" class="hover:underline text-white">Vision & Mission</a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline text-white"></a>
-                        </li>
-                        <li class="mb-4">
-                            <a href="#" class="hover:underline text-white"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-screen h-[0.5px]  shadow"></div><div class="w-screen h-[0.5px]  shadow"></div><div class="w-screen h-[0.5px]  shadow"></div><div class="w-screen h-[0.5px]  shadow"></div>
+    <footer class="bg-[#815a4c] text-white">
+        <section class="flex flex-col md:flex-row justify-center items-center gap-8 px-6 py-12">
             <div
-                class=" text-white md:flex md:items-center md:justify-between flex justify-center items-center flex-col py-4">
-                <span class="text-sm text-white dark:text-gray-300 sm:text-center">© 2023 <a
-                        href="https://flowbite.com/">Pragati Public School™</a>. All Rights Reserved.
-                </span>
+                class="flex flex-col items-center text-center bg-white text-[#815a4c] rounded-lg p-6 max-w-md shadow-lg">
+                <img src="/images/ppslogo.png" alt="PPS Logo" class="h-32 w-32 object-contain mb-3" />
+                <h1 class="text-2xl font-bold leading-tight">PRAGATI PUBLIC<br />SCHOOL</h1>
+                <p class="text-sm mt-4 text-center">
+                    Empowering students with knowledge, discipline, and values to become confident individuals,
+                    responsible citizens, and leaders of tomorrow.
+                </p>
             </div>
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                        Muwani, Pithoragarh, Uttarakhand
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                        +91 9568903971, +91 7505163996
+                    </li>
+                    <li class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                        pragatischool123@gmail.com
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="w-full flex flex-col items-center bg-[#704333] md:flex-row justify-center md:gap-20 py-10">
+            <div class="flex flex-col gap-3">
+                <h2 class=" text-2xl font-semibold">Locate Us</h2>
+                <div class=" w-full md:w-[400px] h-[300px]">
+                    <iframe class="w-full h-full rounded-lg shadow-md border-0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1125.7027650032085!2d80.12751747223928!3d29.756218729175426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a12aee404a5dd5%3A0xf98b3b62a95899f6!2sPragati%20Public%20School%20Muwani!5e1!3m2!1sen!2sin!4v1753547395739!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            <div class="mt-5 py-4 w-fit">
+                <h2 class="text-lg font-semibold uppercase mb-6">Useful Links</h2>
+                <div class="gap-10 flex">
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/index.html" class="hover:underline">Home</a></li>
+                        <li><a href="/pages/aboutpps.html" class="hover:underline">About PPS</a></li>
+                        <li><a href="/pages/manager's-message.html" class="hover:underline">Manager's Message</a>
+                        <li><a href="/pages/principal's-message.html" class="hover:underline">Principal's Message</a>
+                        </li>
+
+                    </ul>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/pages/gallery.html" class="hover:underline">Photo Gallery</a></li>
+                        <li><a href="/pages/ourcampus.html" class="hover:underline">Our Campus</a></li>
+                        <li><a href="/academics/fee-structure-2025-26.pdf" target="_blank" class="hover:underline">Fee
+                                Structure</a></li>
+                        <li><a href="/pages/missionandvision.html" class="hover:underline">Vision & Mission</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="border-t border-white/20"></div>
+        <div class="flex flex-col md:flex-row items-center justify-between py-4 text-sm">
+            <span class="text-center w-full px-3 text-xs">&copy; 2025 Pragati Public School™. All Rights
+                Reserved.</span>
         </div>
     </footer>
-    <script src="/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
+
 </html>

@@ -42,7 +42,8 @@ if(document.body.id === "index-page"){
 }
 
 
-document.getElementById("doubleDropdownButton-two").addEventListener("click", ()=>{
+if(document.body.id !== "admin-page"){
+  document.getElementById("doubleDropdownButton-two").addEventListener("click", ()=>{
   
   document.getElementById("doubleDropdown-two").classList.toggle("hidden")
     document.getElementById("doubleDropdown").classList.add("hidden")
@@ -53,9 +54,10 @@ document.getElementById("doubleDropdownButton").addEventListener("click", ()=>{
   document.getElementById("doubleDropdown-two").classList.add("hidden")
  
 })
+}
 
 
-
+if(document.body.id === "index-page"){
 async function getNews() {
   const res = await fetch("http://localhost:3000/getnews")
   const data = await res.json()
@@ -77,18 +79,23 @@ async function getNews() {
 }
 
 getNews()
+}
 
 
-const swiper = new Swiper(".mySwiper", {
+
+
+
+if(document.body.id != "admin-page"){
+  const swiper = new Swiper(".mySwiper", {
     loop: true,
     speed: 700,
     effect: "fade",  // or "fade"
     slidesPerView: 1,
     spaceBetween: 0,
-    autoplay: {
-      delay: 2000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 2000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -114,3 +121,62 @@ const swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+}
+
+if(document.body.id === "admin-page"){
+document.getElementById("addTeacherForm").addEventListener("submit", async function (e) {
+  e.preventDefault(); // prevent page reload
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const res = await fetch("http://localhost:3000/add-teacher", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await res.json();
+  alert(data.message);
+  form.reset();
+});
+
+}
+
+
+
+async function deleteTeacher(e) {
+  e.preventDefault();
+  const contact = document.getElementById("contactDelete").value;
+  const res = await fetch("http://localhost:3000/delete-teacher", {
+    method: "POST",
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ contact })
+  });
+  const data = await res.json();
+  alert(data.message);
+  location.reload();
+}
+
+if (document.getElementById("teachersGrid")) {
+  fetch("http://localhost:3000/u-teachers")
+    .then(res => res.json())
+    .then(data => {
+      const grid = document.getElementById("teachersGrid");
+      data.forEach(teacher => {
+        grid.innerHTML += 
+          `<div class="flex items-start gap-3 flex-col md:flex-row bg-gray-100 md:w-[60%]  p-2">
+                    <img src="http://localhost:3000${teacher.profile_image_url}" alt="Profile"
+                        class="h-36 w-32 object-cover mb-4 border-4 border-[#00000]">
+                    <div class="flex flex-col ">
+                        <h3 class="text-xl font-semibold text-[#5a4a3c]">Name: ${teacher.name}</h3>
+                        <p class="text-sm text-gray-600 ">Teaching level: ${teacher.qualification}</p>
+                        <p class="text-sm text-gray-600 mt-1">Contact: +91 ${teacher.contact}</p>
+                    </div>
+                </div>
+                 <div class="h-[0.5px] bg-gray-500 shadow my-3 md:w-[80%]"></div>`
+      });
+    });
+}
+
+// Populate the delete list
+// Load teacher list on admin panel
