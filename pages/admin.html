@@ -15,12 +15,12 @@
 
 <body id="admin-page">
     <div class="overflow-hidden whitespace-nowrap bg-[#815a4c] text-white py-2">
-        <div class="inline-block animate-marquee">
+        <div class="inline-block md:inline-block animate-marque animate-marquee">
             <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
             <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
         </div>
     </div>
-    <div class="fixed bottom-0 right-0 flex justify-center items-center">
+    <div class="fixed bottom-0 right-0 md:bottom-10 md:right-10 flex justify-center items-center">
         <a href="/index.html" class="py-2 px-4 bg-[#815a4c] text-white rounded-2xl">Main</a>
     </div>
     <header class="py-3 bg-white">
@@ -36,11 +36,11 @@
         </nav>
     </header>
     <div class="h-[1px] bg-[#815a4c] w-full"></div>
-    <main class="mt-5">
-        <section>
-            <h1 class="font-semibold w-full text-center">Admin Panel</h1>
-            <section class="w-full px-4 mt-4">
-                <h1>News And Events</h1>
+    <main class="">
+        <section class="wfu'">
+            <h1 class="font-semibold w-full text-center mb-10 py-2 bg-[#815a4c] text-white">Admin Panel</h1>
+            <section class="w-full px-4 mt-4 max-w-3xl mx-auto">
+                <h1 class="text-3xl font-bold mb-6 text-center text-amber-700">Manage News And Events</h1>
                 <table class="w-full table-auto border-collapse rounded-lg overflow-hidden shadow-lg">
                     <thead>
                         <tr class="bg-red-600 text-white">
@@ -53,41 +53,42 @@
                     </tbody>
                 </table>
 
-                <form id="newsaddform" action="" class="mt-4">
+                <form id="newsaddform" action=""
+                    class="mt-4 w-full flex flex-col gap-3 items-start justify-center md:flex-row">
 
-                    <input id="addnews" type="text" class="rounded-2xl outline-none focus:outline-0 focus:border-none"
-                        placeholder="Add News">
-                    <button type="submit" class="bg-amber-200 px-4 py-2 rounded-2xl">ADD</button>
+                    <input id="addnews" type="text" class="w-full border p-2 rounded" placeholder="Add News">
+                    <button type="submit" class="bg-amber-200 text-black px-4 py-2 rounded">ADD</button>
                 </form>
-                <form id="newsdeleteform" action="" class="mt-4">
+                <form id="newsdeleteform" action=""
+                    class="mt-4 w-full flex flex-col gap-3 items-start justify-center md:flex-row">
 
-                    <input id="deletenews" type="text"
-                        class="rounded-2xl outline-none focus:outline-0 focus:border-none" placeholder="Delete News">
-                    <button type="submit" class="bg-amber-200 px-4 py-2 rounded-2xl">Delete</button>
+                    <input id="deletenews" type="text" class="w-full border p-2 rounded" placeholder="Delete News">
+                    <button type="submit" class="bg-amber-200 text-black px-4 py-2 rounded">Delete</button>
                 </form>
             </section>
         </section>
+        <div class="h-[1px] bg-[#815a4c] w-full my-10"></div>
         <section class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6 text-center text-green-700">Admin Panel - Manage Teachers</h2>
+            <h2 class="text-3xl font-bold mb-6 text-center text-amber-700">Admin Panel - Manage Teachers</h2>
 
             <!-- Add Teacher Form -->
             <form id="addTeacherForm" class="bg-white p-6 rounded shadow space-y-4 mb-10">
 
                 <input type="text" name="name" placeholder="Teacher Name" required class="w-full border p-2 rounded" />
-                <input type="text" name="qualification" placeholder="Qualification" 
-                    class="w-full border p-2 rounded" />
+                <input type="text" name="qualification" placeholder="Qualification" class="w-full border p-2 rounded" />
                 <input type="text" name="contact" placeholder="Contact Number" required
                     class="w-full border p-2 rounded" />
-                <input type="file" name="profileImage" accept="image/*"  class="w-full" />
+                <p class="mt-2">Select Image</p>
+                <input type="file" name="profileImage" accept="image/*" class="w-full" />
                 <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add
                     Teacher</button>
             </form>
             <!-- Preview of Teachers (for delete) -->
-<!-- Teacher List Preview -->
-<div id="teacherList" class="bg-white p-6 rounded shadow space-y-3 mb-8">
-  <h3 class="text-xl font-semibold text-[#4B5320] mb-4">Current Teachers</h3>
-  <ul id="teacherItems" class="space-y-2"></ul>
-</div>
+            <!-- Teacher List Preview -->
+            <div id="teacherList" class="bg-white px-6 rounded shadow">
+                <h3 class="text-xl font-semibold text-[#4B5320] mb-4">Current Teachers</h3>
+                <ul id="teacherItems" class="space-y-2"></ul>
+            </div>
 
 
 

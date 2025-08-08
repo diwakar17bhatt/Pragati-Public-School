@@ -92,14 +92,41 @@ app.post('/add-teacher', upload.single('profileImage'), (req, res) => {
   });
 });
 
+const fs = require('fs');
+
 app.post('/delete-teacher', (req, res) => {
   const { contact } = req.body;
-  const sql = "DELETE FROM teachers WHERE contact = ?";
-  db.query(sql, [contact], (err, result) => {
-    if (err) return res.status(500).send(err);
-    res.send({ message: "Teacher deleted successfully" });
+
+  // Step 1: Get the image path from database
+  const selectSql = "SELECT profile_image_url FROM teachers WHERE contact = ?";
+  db.query(selectSql, [contact], (err, result) => {
+    if (err) return res.status(500).send({ message: "Database error", error: err });
+    if (result.length === 0) return res.status(404).send({ message: "Teacher not found" });
+
+    const imageUrl = result[0].profile_image_url;
+    const imageFile = path.basename(imageUrl); // Only filename
+    const imagePath = path.join(__dirname, 'uploads', imageFile);
+
+    // Step 2: Try deleting image (non-blocking)
+    fs.unlink(imagePath, (fsErr) => {
+      if (fsErr && fsErr.code !== 'ENOENT') {
+        // Log but don't block DB deletion
+        console.error("Image deletion error:", fsErr);
+      }
+
+      // Step 3: Delete the teacher from DB regardless of image deletion
+      const deleteSql = "DELETE FROM teachers WHERE contact = ?";
+      db.query(deleteSql, [contact], (deleteErr, result) => {
+        if (deleteErr) return res.status(500).send({ message: "Error deleting teacher", error: deleteErr });
+
+        res.send({ message: "Teacher deleted successfully (image deleted if found)" });
+      });
+    });
   });
 });
+
+
+
 
 app.get('/teachers', (req, res) => {
   db.query("SELECT * FROM teachers", (err, result) => {

@@ -178,5 +178,24 @@ if (document.getElementById("teachersGrid")) {
     });
 }
 
+if(document.body.id === "index-page"){
+   const grabBox = document.getElementById("grabBox");
+
+  // When left mouse button is pressed down
+  grabBox.addEventListener("mousedown", (e) => {
+    if (e.button === 0) { // 0 = left button
+      grabBox.classList.remove("cursor-grab");
+      grabBox.classList.add("cursor-grabbing");
+    }
+  });
+
+  // On release (anywhere on the page)
+  document.addEventListener("mouseup", () => {
+    grabBox.classList.remove("cursor-grabbing");
+    grabBox.classList.add("cursor-grab");
+  });
+
+
+}
 // Populate the delete list
 // Load teacher list on admin panel
