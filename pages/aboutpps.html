@@ -330,7 +330,11 @@
         </section>
         <div class="border-t border-white/20"></div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center py-5 px-6 text-xs text-white/80 text-center">
-            <span>&copy; 2025 Pragati Public School™. All Rights Reserved.</span>
+             <span>&copy; <span id="year"></span> Pragati Public School™. All Rights Reserved.</span>
+
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
            
         </div>
     </footer>
