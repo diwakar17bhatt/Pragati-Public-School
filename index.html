@@ -117,9 +117,9 @@
                 </li>
                 <li><a href="/pages/gallery.html"
                         class="border-b w-fit py-2 px-4 hover:bg-[#967b72] hover:text-white rounded-lg">Gallery</a></li>
-                <li><a href="/pages/admin.html"
+                <li><button onclick=goAdmin()
                         class="bg-[#967b72] text-white text-center flex justify-center items-center py-2 px-4 rounded-lg">Admin
-                        Login</a></li>
+                        Login</button></li>
             </ul>
             <div class="text-center md:hidden">
                 <button class="text-white bg-[#815a4c] font-medium rounded-lg text-sm px-4 py-2" type="button"
@@ -227,8 +227,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mt-10">
-                    <a href="/pages/admin.html" class="bg-[#8B4513] text-white px-3 py-2 rounded-2xl">Admin Login</a>
+                <div class="mt-5">
+                    <button onclick=goAdmin() class="bg-[#8B4513] text-white px-3 py-2 rounded-2xl">Admin Login</button>
                 </div>
             </div>
         </nav>
@@ -255,13 +255,13 @@
                 class="swiper-button-next text-white md:text-black cursor-pointer md:bg-white md:h-14 md:w-14 flex items-center justify-center md:rounded-full md:right-5">
             </div>
         </div>
-        <section class="px-5 py-20 bg-white md:flex md:justify-center md:gap-30 md:items-center md:mt-5">
+        <section class="px-5 py-10 bg-white md:flex md:justify-center md:gap-30 md:items-center">
             <div class="md:w-[600px]">
                 <p class="text-[#8B4513] font-semibold md:text-3xl">Welcome To</p>
                 <div class="w-full md:w-[800px]">
                     <h1 class="text-xl md:text-5xl font-bold ">Pragati Public School</h1>
                 </div>
-                <p style="word-spacing: 10px;" class=" pt-5 md:w-[600px] font-semibold bgred">
+                <p style="word-spacing: 10px;" class=" pt-5 md:w-[600px] oranienbaum-regular">
                     Lorem ipsum
                     dolor
                     sit amet, consectetur adipisicing elit. Amet
@@ -285,13 +285,8 @@
             </div>
             <div id="grabBox"
                 class="hidden md:flex items-end w-[400px] h-[400px] mb-28 relative group transition-transform duration-300 hover:scale-105 cursor-grab">
-
-                <!-- Background Shape -->
-                <div class="absolute bottom-0 w-full h-64 bg-[#8B4513] rounded-tl-full rounded-br-full z-0"></div>
-
-                <!-- Image inside background shape -->
-                <div
-                    class="absolute bottom-0 w-full h-full overflow-hidden rounded-tl-[180px] rounded-br-[255px] z-10">
+                <div class="absolute bottom-0 w-full h-64 bg-[#905e3a] rounded-tl-full rounded-br-full z-0"></div>
+                <div class="absolute bottom-0 w-full h-full overflow-hidden rounded-tl-[180px] rounded-br-[255px] z-10 pl-5">
 
                     <img src="/images/frontimage.png" alt="School Front"
                         class="object-cover w-full h-full transition-transform duration-300 hover:scale-105" />
@@ -305,41 +300,47 @@
         <section class="py-5 pb-10 w-full md:py-0">
             <section
                 class="mx-5 py-5 pt-5 flex flex-col gap-3 bg-[#a67c52] rounded-md md:flex md:flex-row md:justify-center md:gap-40 md:py-20 md:mx-0 md:rounded-none">
-                
+
                 <div class="md:w-full  md:flex md:gap-10 md:flex-row-reverse px-3 justify-center items-center">
                     <div class="md:w-[600px]">
                         <p class="font-bold text-[#FFD700] md:text-2xl">From the Principal's Desk</p>
-                    <p style="word-spacing: 8px;" class="text-white leading-relaxed tracking-wide cormorant-garamond py-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae beatae explicabo animi
-                        doloremque,
-                        consectetur ullam quis, nemo tempora laboriosam placeat quos sapiente facere modi architecto,
-                        aperiam
-                        quaerat voluptatibus quibusdam illum.
-                        <br><br>
-                        Voluptates odit nesciunt assumenda voluptatem laborum tempore, veniam eius rem sequi. Alias
-                        unde, ea
-                        quidem placeat deserunt error aut voluptate minima saepe harum accusamus, voluptas quas
-                        perferendis.
-                        <br><br>
-                        Fugiat vitae cum pariatur, asperiores dolorum nostrum recusandae optio voluptates iste nemo ea?
-                        Repellendus iusto veniam harum ad, doloribus temporibus dolore quaerat, architecto nisi hic!
-                        <br><br>
-                        Ipsum et aut hic illum, nesciunt cupiditate beatae nam accusantium, unde laborum, quo sapiente
-                        dolor! Quod
-                        doloribus molestiae eius inventore voluptatibus enim amet quam sunt pariatur fugiat vitae, ullam
-                        minima?
-                    </p>
-                    <button class="w-fit text-[#FFC107] hover:underline text-sm">
-                        <a href="/pages/principal's-message.html">Read More...</a>
-                    </button>
+                        <p style="word-spacing: 8px;"
+                            class="text-white leading-relaxed tracking-wide cormorant-garamond py-4">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae beatae explicabo animi
+                            doloremque,
+                            consectetur ullam quis, nemo tempora laboriosam placeat quos sapiente facere modi
+                            architecto,
+                            aperiam
+                            quaerat voluptatibus quibusdam illum.
+                            <br><br>
+                            Voluptates odit nesciunt assumenda voluptatem laborum tempore, veniam eius rem sequi. Alias
+                            unde, ea
+                            quidem placeat deserunt error aut voluptate minima saepe harum accusamus, voluptas quas
+                            perferendis.
+                            <br><br>
+                            Fugiat vitae cum pariatur, asperiores dolorum nostrum recusandae optio voluptates iste nemo
+                            ea?
+                            Repellendus iusto veniam harum ad, doloribus temporibus dolore quaerat, architecto nisi hic!
+                            <br><br>
+                            Ipsum et aut hic illum, nesciunt cupiditate beatae nam accusantium, unde laborum, quo
+                            sapiente
+                            dolor! Quod
+                            doloribus molestiae eius inventore voluptatibus enim amet quam sunt pariatur fugiat vitae,
+                            ullam
+                            minima?
+                        </p>
+                        <button class="w-fit text-[#FFC107] hover:underline text-sm">
+                            <a href="/pages/principal's-message.html">Read More...</a>
+                        </button>
                     </div>
                     <div
-                    class="h-auto  md:w-96   rounded-3xl mt-3 mx-3 shadow-md flex flex-col items-center justify-center p-4">
-                    <img src="/images/principal.jpg" alt="Principal Photo"
-                        class=" object-cover border-4 border-white shadow-md mb-3  md:h-96 md:w-96 ">
-                    <p class="cookie-regular text-2xl text-[#815a4c] bg-white px-6 py-1 w-fit rounded">Suman Bhatt</p>
-                    <p class="text-white font-medium text-center mt-2">Principal, Pragati Public School</p>
-                </div>
+                        class="h-auto  md:w-96   rounded-3xl mt-3 mx-3 shadow-md flex flex-col items-center justify-center p-4">
+                        <img src="/images/principal.jpg" alt="Principal Photo"
+                            class=" object-cover border-4 border-white shadow-md mb-3  md:h-96 md:w-96 ">
+                        <p class="cookie-regular text-2xl text-[#815a4c] bg-white px-6 py-1 w-fit rounded">Suman Bhatt
+                        </p>
+                        <p class="text-white font-medium text-center mt-2">Principal, Pragati Public School</p>
+                    </div>
                 </div>
             </section>
         </section>
@@ -382,8 +383,8 @@
                 </div>
             </div>
         </section>
-        <section style="background-image: url(images/background.jpg);"
-            class="bg-cover bg-center relative overflow-y-scroll bg-fixed flex flex-col justify-center items-center h-full w-full ">
+        <section
+            class=" bg-[url('/images/background.jpg')] md:bg-[url('/images/mainimg1.jpg')]  bg-cover bg-center relative bg-fixed flex flex-col justify-center items-center h-full w-full ">
             <section
                 class=" px-6 py-30 flex flex-col gap-6 border border-white bg-[#8B4513]/80 h-full w-full md:flex-row md:justify-center md:items-center ">
                 <div class="flex flex-col justify-center items-center">

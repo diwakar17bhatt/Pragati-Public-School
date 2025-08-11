@@ -178,7 +178,7 @@ if (document.getElementById("teachersGrid")) {
     });
 }
 
-if(document.body.id === "index-page"){
+if(document.body.id === "index-page" || document.body.id === "aboutpps-page"){
    const grabBox = document.getElementById("grabBox");
 
   // When left mouse button is pressed down
@@ -199,3 +199,15 @@ if(document.body.id === "index-page"){
 }
 // Populate the delete list
 // Load teacher list on admin panel
+
+function goAdmin(){
+  if(document.body.id === "index-page"){
+   const pass = "hello123";
+   const input = prompt("Enter the password to access the admin panel", "");
+   if(input === pass){
+     window.location.href = "/pages/admin.html";
+   }else{
+     alert("Incorrect password");
+   }
+  }
+}

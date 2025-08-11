@@ -17,11 +17,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cookie&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Oranienbaum&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sevillana&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <title>Pragati Public School</title>
 </head>
 
-<body class="overflow-x-hidden">
+<body id="aboutpps-page" class="overflow-x-hidden">
      <div class="overflow-hidden whitespace-nowrap bg-[#815a4c] text-white py-2">
         <div class="inline-block md:inline-block animate-marque animate-marquee">
             <span class="mx-4">Welcome to Pragati Public School, Muwani (Pithoragarh) Official Website.</span>
@@ -218,13 +221,14 @@
     </header>
     <div class="w-full h-[1px] bg-[#815a4c]"></div>
     <main>
-        <section class="px-5 py-10 md:flex md:justify-center md:items-center">
-            <div class="">
+         <section class="px-5 bg-white md:flex md:justify-center md:gap-30 md:items-center 
+         my-5">
+            <div class="md:w-[600px]">
                 <p class="text-[#8B4513] font-semibold md:text-3xl">Welcome To</p>
                 <div class="w-full md:w-[800px]">
                     <h1 class="text-xl md:text-5xl font-bold ">Pragati Public School</h1>
                 </div>
-                <p style="word-spacing: 10px;" class=" pt-5 md:w-[600px] font-semibold">
+                <p style="word-spacing: 10px;" class=" pt-5 md:w-[600px] oranienbaum-regular">
                     Lorem ipsum
                     dolor
                     sit amet, consectetur adipisicing elit. Amet
@@ -243,9 +247,21 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae velit nesciunt, rerum aliquid
                     temporibus optio asperiores, excepturi voluptatem vel debitis incidunt iure corrupti expedita eos
                     repellendus maxime aut quibusdam? Repellendus.</p>
+                <button class="w-fit text-blue-400 text-sm mt-4"><a href="/pages/aboutpps.html">Read
+                        More...</a></button>
             </div>
-            <div class="hidden md:flex h-64 w-64 bg-red-800">
-                <img src="/images/kid1.jpg" class="h-64 w-64 object-cover" alt="">
+             <div id="grabBox"
+                class="hidden md:flex items-end w-[400px] h-[400px] mb-28 relative group transition-transform duration-300 hover:scale-105 cursor-grab">
+                <div class="absolute bottom-0 w-full h-64 bg-[#905e3a] rounded-tl-full rounded-br-full z-0"></div>
+                <div class="absolute bottom-0 w-full h-full overflow-hidden rounded-tl-[180px] rounded-br-[255px] z-10 pl-5">
+
+                    <img src="/images/frontimage.png" alt="School Front"
+                        class="object-cover w-full h-full transition-transform duration-300 hover:scale-105" />
+                </div>
+
+            </div>
+
+
             </div>
         </section>
     </main>
@@ -318,3 +334,9 @@
            
         </div>
     </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
